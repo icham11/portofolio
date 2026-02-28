@@ -9,6 +9,7 @@ import profile from "@/content/profile.json";
 import { useLang } from "@/providers/LanguageProvider";
 import { t, getText } from "@/lib/i18n/translations";
 import { LogoIcon } from "@/components/ui/LogoIcon";
+import { usePathname } from "next/navigation";
 
 // Stagger variants for lists
 const listVariants = {
@@ -17,12 +18,20 @@ const listVariants = {
 };
 const listItemVariants = {
   hidden: { opacity: 0, x: -8 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const { lang } = useLang();
+  const pathname = usePathname();
+
+  // Hide footer on AI Interview page to allow true full-height chat UI
+  if (pathname === "/ai-interview") return null;
 
   const navLinks = [
     { href: "/", label: getText(t.nav.home, lang) },
@@ -60,7 +69,8 @@ export function Footer() {
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse, rgba(139,92,246,0.05) 0%, transparent 70%)",
+          background:
+            "radial-gradient(ellipse, rgba(139,92,246,0.05) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />

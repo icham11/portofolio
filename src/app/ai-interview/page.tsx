@@ -71,8 +71,8 @@ export default function AIInterviewPage() {
      * - Kolom dalam: flex-col, messages area grow, input sticky di bawah
      */
     <div
-      className="flex flex-col px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24"
-      style={{ height: "100svh", overflow: "hidden" }}
+      className="flex flex-col px-4 sm:px-6 lg:px-8 py-6 sm:py-8"
+      style={{ height: "calc(100svh - 64px)", overflow: "hidden" }}
     >
       <div className="max-w-3xl w-full mx-auto flex flex-col flex-1 min-h-0">
         {/* Header */}
