@@ -27,16 +27,21 @@ export function AboutContent() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
-          className="mb-16"
+          className="mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="badge-gradient mb-4 inline-block">{getText(t.about.badge, lang)}</span>
+          <span className="badge-gradient mb-4 inline-block">
+            {getText(t.about.badge, lang)}
+          </span>
           <h1 className="font-heading font-black text-foreground mt-3 mb-4">
-            {getText(t.about.heading, lang)} <span className="gradient-text">{getText(t.about.headingHighlight, lang)}</span>
+            {getText(t.about.heading, lang)}{" "}
+            <span className="gradient-text">
+              {getText(t.about.headingHighlight, lang)}
+            </span>
           </h1>
-          <p className="text-lg text-foreground-muted leading-relaxed max-w-2xl">
+          <p className="text-lg text-foreground-muted leading-relaxed max-w-2xl mx-auto">
             {profile.about[lang]}
           </p>
         </motion.div>
@@ -46,14 +51,30 @@ export function AboutContent() {
           className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10"
           initial="hidden"
           animate="visible"
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.09, delayChildren: 0.25 } } }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.09, delayChildren: 0.25 },
+            },
+          }}
         >
           {profile.core_strengths.map((strength, i) => (
             <motion.div
               key={i}
               className="glass-card p-4 flex items-start gap-3"
-              variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }}
-              whileHover={{ scale: 1.02, boxShadow: "0 0 0 1px rgba(139,92,246,0.25), 0 4px 20px -8px rgba(139,92,246,0.2)" }}
+              variants={{
+                hidden: { opacity: 0, y: 18 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                },
+              }}
+              whileHover={{
+                scale: 1.02,
+                boxShadow:
+                  "0 0 0 1px rgba(139,92,246,0.25), 0 4px 20px -8px rgba(139,92,246,0.2)",
+              }}
             >
               <span className="text-brand-violet font-mono text-lg">
                 0{i + 1}
@@ -72,14 +93,19 @@ export function AboutContent() {
         >
           <h2 className="font-heading font-bold text-foreground mb-8">
             {getText(t.about.journeyTitle, lang)}{" "}
-            <span className="gradient-text">{getText(t.about.journeyHighlight, lang)}</span>
+            <span className="gradient-text">
+              {getText(t.about.journeyHighlight, lang)}
+            </span>
           </h2>
 
           <div className="relative">
             {/* Animated vertical line */}
             <motion.div
               className="absolute left-6 top-0 bottom-0 w-px"
-              style={{ background: "linear-gradient(to bottom, rgba(139,92,246,0.5), rgba(6,182,212,0.3), transparent)" }}
+              style={{
+                background:
+                  "linear-gradient(to bottom, rgba(139,92,246,0.5), rgba(6,182,212,0.3), transparent)",
+              }}
               initial={{ scaleY: 0 }}
               whileInView={{ scaleY: 1 }}
               viewport={{ once: true }}
@@ -94,7 +120,11 @@ export function AboutContent() {
                   initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.55, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{
+                    duration: 0.55,
+                    delay: index * 0.08,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                 >
                   {/* Animated timeline dot — positioned relative to reduced gutter */}
                   <div
@@ -112,7 +142,8 @@ export function AboutContent() {
                     className={`glass-card p-5 ${item.highlight ? "border-brand-violet/30 bg-brand-violet/5" : ""}`}
                     whileHover={{
                       scale: 1.015,
-                      boxShadow: "0 0 0 1px rgba(139,92,246,0.2), 0 8px 30px -12px rgba(139,92,246,0.2)",
+                      boxShadow:
+                        "0 0 0 1px rgba(139,92,246,0.2), 0 8px 30px -12px rgba(139,92,246,0.2)",
                     }}
                   >
                     <div className="flex items-center gap-2 mb-2">
@@ -147,7 +178,9 @@ export function AboutContent() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-heading font-bold text-foreground mb-8">
-            <span className="gradient-text">{getText(t.about.certTitle, lang)}</span>
+            <span className="gradient-text">
+              {getText(t.about.certTitle, lang)}
+            </span>
           </h2>
 
           <div className="space-y-3">
@@ -161,7 +194,8 @@ export function AboutContent() {
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 whileHover={{
                   scale: 1.015,
-                  boxShadow: "0 0 0 1px rgba(139,92,246,0.25), 0 6px 24px -8px rgba(139,92,246,0.2)",
+                  boxShadow:
+                    "0 0 0 1px rgba(139,92,246,0.25), 0 6px 24px -8px rgba(139,92,246,0.2)",
                 }}
               >
                 <div className="p-2 rounded-lg bg-violet-500/10 border border-violet-500/20 flex-shrink-0">
@@ -184,7 +218,8 @@ export function AboutContent() {
                         rel="noopener noreferrer"
                         className="flex items-center gap-1 text-xs text-brand-violet hover:text-violet-600 dark:hover:text-violet-300 transition-colors flex-shrink-0"
                       >
-                        {getText(t.about.verify, lang)} <ExternalLink className="w-3 h-3" />
+                        {getText(t.about.verify, lang)}{" "}
+                        <ExternalLink className="w-3 h-3" />
                       </a>
                     )}
                   </div>
@@ -207,7 +242,8 @@ export function AboutContent() {
         >
           <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
             <Link href="/projects" className="btn-primary inline-flex">
-              {getText(t.about.seeProjects, lang)} <ArrowRight className="w-4 h-4 ml-2" />
+              {getText(t.about.seeProjects, lang)}{" "}
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </motion.div>
         </motion.div>

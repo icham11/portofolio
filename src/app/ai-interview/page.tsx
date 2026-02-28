@@ -77,29 +77,29 @@ export default function AIInterviewPage() {
       <div className="max-w-3xl w-full mx-auto flex flex-col flex-1 min-h-0">
         {/* Header */}
         <motion.div
-          className="mb-4 flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4 flex-shrink-0"
+          className="mb-6 flex flex-col items-center text-center relative flex-shrink-0"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
         >
-          <div className="flex-1">
-            <span className="badge-gradient mb-2 inline-block">
-              {getText(t.ai.badge, lang)}
+          <span className="badge-gradient mb-3 inline-block">
+            {getText(t.ai.badge, lang)}
+          </span>
+          {/* Changed font-bold to font-black and removed explicit text-xl sizes so it inherits the global h1 font size clamps like the Projects page */}
+          <h1 className="font-heading font-black text-foreground mt-1 mb-2">
+            {getText(t.ai.heading, lang)}{" "}
+            <span className="gradient-text">
+              {getText(t.ai.headingHighlight, lang)}
             </span>
-            <h1 className="font-heading font-bold text-foreground mt-1 text-xl sm:text-2xl">
-              {getText(t.ai.heading, lang)}{" "}
-              <span className="gradient-text">
-                {getText(t.ai.headingHighlight, lang)}
-              </span>
-            </h1>
-            <p className="text-sm text-foreground-muted mt-1">
-              {getText(t.ai.sub, lang)}
-            </p>
-          </div>
+          </h1>
+          <p className="text-sm sm:text-base text-foreground-muted mt-1 max-w-xl mx-auto">
+            {getText(t.ai.sub, lang)}
+          </p>
+
           {messages.length > 0 && (
             <button
               onClick={handleReset}
-              className="flex items-center gap-1.5 text-xs text-foreground-subtle hover:text-foreground transition-colors sm:mt-1 flex-shrink-0 self-start sm:self-auto bg-white/5 sm:bg-transparent px-3 py-1.5 sm:px-0 sm:py-0 rounded-md sm:rounded-none border border-white/10 sm:border-transparent"
+              className="flex items-center gap-1.5 text-xs text-foreground-subtle hover:text-foreground transition-colors mt-4 flex-shrink-0 bg-white/5 sm:bg-transparent px-3 py-1.5 rounded-md border border-white/10 sm:border-transparent absolute sm:relative top-0 sm:top-auto right-0 sm:right-auto"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               {getText(t.ai.reset, lang)}
