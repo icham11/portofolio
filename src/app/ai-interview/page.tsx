@@ -37,7 +37,8 @@ export default function AIInterviewPage() {
     if (!container) return;
     // Hanya auto-scroll jika pengguna sudah berada di dekat bagian bawah (< 80px dari bawah)
     const isNearBottom =
-      container.scrollHeight - container.scrollTop - container.clientHeight < 80;
+      container.scrollHeight - container.scrollTop - container.clientHeight <
+      80;
     if (isNearBottom || isLoading) {
       container.scrollTo({ top: container.scrollHeight, behavior: "smooth" });
     }
@@ -70,25 +71,26 @@ export default function AIInterviewPage() {
      * - Kolom dalam: flex-col, messages area grow, input sticky di bawah
      */
     <div
-      className="flex flex-col px-4 sm:px-6 lg:px-8"
-      style={{ height: "calc(100svh - 64px)", overflow: "hidden", paddingTop: "1.5rem" }}
+      className="flex flex-col px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24"
+      style={{ height: "100svh", overflow: "hidden" }}
     >
       <div className="max-w-3xl w-full mx-auto flex flex-col flex-1 min-h-0">
-
         {/* Header */}
         <motion.div
-          className="mb-4 flex items-start justify-between gap-4 flex-shrink-0"
+          className="mb-4 flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4 flex-shrink-0"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
         >
-          <div>
+          <div className="flex-1">
             <span className="badge-gradient mb-2 inline-block">
               {getText(t.ai.badge, lang)}
             </span>
             <h1 className="font-heading font-bold text-foreground mt-1 text-xl sm:text-2xl">
               {getText(t.ai.heading, lang)}{" "}
-              <span className="gradient-text">{getText(t.ai.headingHighlight, lang)}</span>
+              <span className="gradient-text">
+                {getText(t.ai.headingHighlight, lang)}
+              </span>
             </h1>
             <p className="text-sm text-foreground-muted mt-1">
               {getText(t.ai.sub, lang)}
@@ -97,7 +99,7 @@ export default function AIInterviewPage() {
           {messages.length > 0 && (
             <button
               onClick={handleReset}
-              className="flex items-center gap-1.5 text-xs text-foreground-subtle hover:text-foreground transition-colors mt-1 flex-shrink-0"
+              className="flex items-center gap-1.5 text-xs text-foreground-subtle hover:text-foreground transition-colors sm:mt-1 flex-shrink-0 self-start sm:self-auto bg-white/5 sm:bg-transparent px-3 py-1.5 sm:px-0 sm:py-0 rounded-md sm:rounded-none border border-white/10 sm:border-transparent"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               {getText(t.ai.reset, lang)}
@@ -123,7 +125,10 @@ export default function AIInterviewPage() {
         <div
           ref={chatContainerRef}
           className="flex-1 min-h-0 overflow-y-auto overscroll-contain space-y-4 mb-3 pr-1 scroll-smooth"
-          style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(139,92,246,0.3) transparent" }}
+          style={{
+            scrollbarWidth: "thin",
+            scrollbarColor: "rgba(139,92,246,0.3) transparent",
+          }}
         >
           {/* Welcome state */}
           {messages.length === 0 && (
@@ -139,7 +144,7 @@ export default function AIInterviewPage() {
               <p className="text-foreground-muted text-sm mb-6">
                 {getText(t.ai.welcome, lang)}
               </p>
-              <div className="flex flex-wrap gap-2 justify-center">
+              <div className="flex flex-wrap gap-2 justify-center max-w-2xl mx-auto">
                 {t.ai.suggestions[lang].map((q) => (
                   <button
                     key={q}
