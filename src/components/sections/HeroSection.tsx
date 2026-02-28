@@ -218,6 +218,20 @@ export function HeroSection() {
                 <Sparkles className="w-4 h-4" />
               </motion.div>
             </div>
+
+            {/* Floating Bot Detail */}
+            <div className="absolute -bottom-1 -left-1 sm:-bottom-2 sm:-left-2 w-8 h-8 rounded-full bg-background-2 border border-black/10 dark:border-white/10 flex items-center justify-center z-20 text-brand-violet shadow-lg">
+              <motion.div
+                animate={{ y: [0, -4, 0] }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <Bot className="w-4 h-4" />
+              </motion.div>
+            </div>
           </motion.div>
         </motion.div>
 
