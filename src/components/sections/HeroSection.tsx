@@ -4,16 +4,11 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Bot,
-  FolderOpen,
-  MapPin,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, Bot, FolderOpen, MapPin, Sparkles } from "lucide-react";
 import { useEffect, useState, useRef, useMemo } from "react";
 import { useLang } from "@/providers/LanguageProvider";
 import { t, getText } from "@/lib/i18n/translations";
+import Image from "next/image";
 
 // Framer Motion container dan item variants dengan stagger
 const containerVariants = {
@@ -151,7 +146,8 @@ export function HeroSection() {
         style={{
           width: "min(700px, 100vw)",
           height: "min(700px, 100vw)",
-          background: "radial-gradient(ellipse, rgba(139, 92, 246, 0.08) 0%, transparent 70%)",
+          background:
+            "radial-gradient(ellipse, rgba(139, 92, 246, 0.08) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
@@ -178,6 +174,53 @@ export function HeroSection() {
           </motion.span>
         </motion.div>
 
+        {/* Artistic Profile Photo */}
+        <motion.div
+          variants={itemVariants}
+          className="flex justify-center mb-8 relative"
+        >
+          <motion.div
+            className="relative w-32 h-32 sm:w-40 sm:h-40"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            {/* Animated Glow Behind */}
+            <motion.div
+              className="absolute inset-0 rounded-full bg-brand-violet/40 blur-2xl"
+              animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            />
+            {/* Gradient Border Frame */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-violet via-brand-cyan to-indigo-500 p-[3px]">
+              <div className="absolute inset-0 bg-background rounded-full" />
+            </div>
+            {/* Inner Image Container */}
+            <div className="absolute inset-[3px] rounded-full overflow-hidden bg-background-2 z-10 border border-black/10 dark:border-white/10">
+              <Image
+                src="/wahid-photo.png"
+                alt="Wahid Nurhisyam"
+                fill
+                sizes="(max-width: 640px) 128px, 160px"
+                className="object-cover transition-transform duration-500 hover:scale-110"
+                priority
+              />
+            </div>
+            {/* Floating Sparkles Detail */}
+            <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-8 h-8 rounded-full bg-background-2 border border-black/10 dark:border-white/10 flex items-center justify-center z-20 text-brand-cyan shadow-lg">
+              <motion.div
+                animate={{ rotate: [0, 15, -15, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <Sparkles className="w-4 h-4" />
+              </motion.div>
+            </div>
+          </motion.div>
+        </motion.div>
+
         {/* Main headline */}
         <motion.div variants={itemVariants}>
           <h1 className="font-heading font-black text-foreground mb-2 leading-tight">
@@ -190,7 +233,13 @@ export function HeroSection() {
         <motion.div variants={itemVariants} className="mb-4">
           <motion.span
             className="badge-gradient text-sm font-mono px-4 py-1.5 flex items-center justify-center mx-auto w-fit"
-            animate={{ boxShadow: ["0 0 0px rgba(139,92,246,0)", "0 0 20px rgba(139,92,246,0.25)", "0 0 0px rgba(139,92,246,0)"] }}
+            animate={{
+              boxShadow: [
+                "0 0 0px rgba(139,92,246,0)",
+                "0 0 20px rgba(139,92,246,0.25)",
+                "0 0 0px rgba(139,92,246,0)",
+              ],
+            }}
             transition={{ duration: 3, repeat: Infinity }}
           >
             <Sparkles className="w-3 h-3 mr-1.5 text-brand-violet" />
@@ -216,29 +265,49 @@ export function HeroSection() {
           className="flex flex-col xs:flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3"
         >
           {/* Primary CTA */}
-          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
-            <Link href="/contact" className="btn-primary group w-full justify-center sm:w-auto">
+          <motion.div
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className="w-full sm:w-auto"
+          >
+            <Link
+              href="/contact"
+              className="btn-primary group w-full justify-center sm:w-auto"
+            >
               {getText(t.nav.hireMe, lang)}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
 
           {/* Project CTA */}
-          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
-            <Link href="/projects" className="btn-outline group w-full justify-center sm:w-auto">
+          <motion.div
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className="w-full sm:w-auto"
+          >
+            <Link
+              href="/projects"
+              className="btn-outline group w-full justify-center sm:w-auto"
+            >
               <FolderOpen className="w-4 h-4" />
               {getText(t.hero.viewProjects, lang)}
             </Link>
           </motion.div>
 
           {/* AI Interview CTA */}
-          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
+          <motion.div
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className="w-full sm:w-auto"
+          >
             <Link
               href="/ai-interview"
               className="btn-outline group w-full justify-center sm:w-auto border-brand-cyan/30 hover:border-brand-cyan hover:bg-brand-cyan/10"
             >
               <Bot className="w-4 h-4 text-brand-cyan" />
-              <span className="text-brand-cyan">{getText(t.hero.talkToAI, lang)}</span>
+              <span className="text-brand-cyan">
+                {getText(t.hero.talkToAI, lang)}
+              </span>
             </Link>
           </motion.div>
         </motion.div>
@@ -283,7 +352,10 @@ export function HeroSection() {
         </motion.div>
 
         {/* Scroll indicator */}
-        <motion.div variants={itemVariants} className="mt-16 flex justify-center">
+        <motion.div
+          variants={itemVariants}
+          className="mt-16 flex justify-center"
+        >
           <motion.div
             className="flex flex-col items-center gap-2 text-foreground-subtle cursor-pointer"
             animate={{ y: [0, 9, 0] }}
@@ -300,7 +372,8 @@ export function HeroSection() {
             <motion.div
               className="w-px h-8"
               style={{
-                background: "linear-gradient(to bottom, rgba(139,92,246,0.8), transparent)",
+                background:
+                  "linear-gradient(to bottom, rgba(139,92,246,0.8), transparent)",
               }}
               animate={{ scaleY: [1, 1.3, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
