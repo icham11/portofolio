@@ -1,0 +1,58 @@
+{
+  "name": "Wahid Nurhisyam",
+  "display_name": "Wahid N",
+  "headline": {
+    "id": "Captain & Fullstack Developer - Membangun produk end-to-end yang stabil dan berdampak",
+    "en": "Captain & Fullstack Developer - Building stable, end-to-end products with business impact"
+  },
+  "location": "Indonesia",
+  "availability": "Open to fullstack roles and product engineering opportunities",
+  "about": {
+    "id": "Saya fullstack developer yang fokus pada problem solving, reliability sistem, dan implementasi produk dari database sampai UI. Saya terbiasa mengerjakan flow kompleks seperti auth, role access, transaksi, webhook, integrasi AI, dan deployment.",
+    "en": "I am a fullstack developer focused on problem solving, system reliability, and end-to-end product implementation from database to UI. I am experienced with complex flows such as auth, RBAC, transactions, webhooks, AI integration, and deployment."
+  },
+  "pitch_30s": {
+    "id": "Saya membangun aplikasi operasional bisnis yang practical, scalable, dan siap production. Project utama saya, Cuanify, menggabungkan POS, inventory, payment gateway, analytics, dan AI assistant dalam satu platform.",
+    "en": "I build practical, scalable, production-ready business operation apps. My main project, Cuanify, combines POS, inventory, payment gateway, analytics, and an AI assistant in one platform."
+  },
+  "core_strengths": [
+    {
+      "id": "Arsitektur fullstack (Next.js, API, DB, deployment)",
+      "en": "Fullstack architecture (Next.js, API, DB, deployment)"
+    },
+    {
+      "id": "Data consistency pada flow transaksi & inventori",
+      "en": "Data consistency across transaction and inventory flows"
+    },
+    {
+      "id": "Integrasi AI untuk use case bisnis nyata",
+      "en": "AI integration for real business use cases"
+    },
+    {
+      "id": "Debugging production issue secara terstruktur",
+      "en": "Structured debugging for production issues"
+    }
+  ],
+  "tech_stack": {
+    "frontend": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    "backend": ["Next.js API Routes", "Node.js"],
+    "database": ["PostgreSQL", "Prisma", "pgvector"],
+    "ai": ["Groq API", "Gemini Embeddings", "RAG"],
+    "integrations": [
+      "Midtrans",
+      "ImageKit",
+      "Google OAuth (NextAuth)",
+      "Xendit"
+    ],
+    "deployment": ["Vercel"]
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/wahid-nurhisyam-154027a7/",
+    "github": "https://github.com/icham11",
+    "email": "ichamdaiboz@gmail.com"
+  },
+  "cta": {
+    "id": "Tertarik kolaborasi, hiring, atau diskusi teknis? Mari terhubung.",
+    "en": "Open to collaboration, hiring opportunities, and technical discussions. Let's connect."
+  }
+}

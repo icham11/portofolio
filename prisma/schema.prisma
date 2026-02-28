@@ -1,0 +1,128 @@
+// prisma/schema.prisma - Schema database untuk portfolio Wahid Nurhisyam
+// Menggunakan PostgreSQL dengan ekstensi pgvector untuk RAG
+
+generator client {
+  provider        = "prisma-client-js"
+  // Aktifkan previewFeatures untuk pgvector
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  // Aktifkan ekstensi pgvector untuk semantic search
+  extensions = [pgvector(map: "vector")]
+}
+
+// ==========================================
+// TABEL PROFIL - Data identitas developer
+// ==========================================
+model Profile {
+  id          String   @id @default(cuid())
+  name        String
+  displayName String   @map("display_name")
+  headline    Json     // { id: string, en: string }
+  location    String
+  availability String
+  about       Json     // { id: string, en: string }
+  pitch30s    Json     @map("pitch_30s") // { id: string, en: string }
+  coreStrengths Json   @map("core_strengths")
+  techStack   Json     @map("tech_stack")
+  links       Json
+  cta         Json
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("profiles")
+}
+
+// ==========================================
+// TABEL PROYEK - Case study portofolio
+// ==========================================
+model Project {
+  id         String   @id @default(cuid())
+  slug       String   @unique
+  title      String
+  status     String   // live | in_progress | archived
+  type       String
+  period     String
+  role       String
+  team       String[]
+  summary    Json     // { id: string, en: string }
+  problem    Json     // { id: string, en: string }
+  solution   Json     // { id: string, en: string }
+  impact     String[]
+  features   String[]
+  tech       Json
+  challenges String[]
+  links      Json
+  order      Int      @default(0)
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  @@map("projects")
+}
+
+// ==========================================
+// TABEL PENCAPAIAN - Sertifikasi & bootcamp
+// ==========================================
+model Achievement {
+  id            String   @id @default(cuid())
+  type          String   // certification | bootcamp | award
+  name          String
+  authority     String
+  issuedAt      DateTime @map("issued_at")
+  credentialUrl String?  @map("credential_url")
+  description   String
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  @@map("achievements")
+}
+
+// ==========================================
+// TABEL DOKUMEN - Sumber data untuk RAG
+// ==========================================
+model Document {
+  id        String          @id @default(cuid())
+  title     String
+  type      String          // qa | project | profile | achievement
+  content   String          @db.Text
+  metadata  Json?
+  chunks    DocumentChunk[]
+  createdAt DateTime        @default(now()) @map("created_at")
+  updatedAt DateTime        @updatedAt @map("updated_at")
+
+  @@map("documents")
+}
+
+// ==========================================
+// TABEL CHUNK DOKUMEN - Potongan untuk vector search
+// ==========================================
+model DocumentChunk {
+  id         String                  @id @default(cuid())
+  documentId String                  @map("document_id")
+  content    String                  @db.Text
+  // Vektor embedding 768 dimensi dari Gemini text-embedding-004
+  embedding  Unsupported("vector(768)")?
+  chunkIndex Int                     @map("chunk_index")
+  metadata   Json?
+  document   Document                @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  createdAt  DateTime                @default(now()) @map("created_at")
+
+  @@map("document_chunks")
+}
+
+// ==========================================
+// TABEL KONTAK - Pesan dari visitor/recruiter
+// ==========================================
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String   @db.Text
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("contact_messages")
+}

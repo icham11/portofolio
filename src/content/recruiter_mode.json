@@ -1,0 +1,50 @@
+{
+  "owner": "Wahid Nurhisyam",
+  "role": "Captain & Fullstack Developer",
+  "summary_30s": {
+    "id": "Saya fullstack engineer yang membangun produk end-to-end dari DB, API, sampai UI. Kuat di reliability, debugging production, dan integrasi AI untuk use case bisnis nyata.",
+    "en": "I am a fullstack engineer building end-to-end products from DB and APIs to UI. Strong in reliability, production debugging, and AI integration for real business use cases."
+  },
+  "why_hire_me": {
+    "id": [
+      "Terbiasa menangani flow kompleks: auth, RBAC, transaksi, webhook, deployment.",
+      "Product-minded: fokus ke dampak bisnis, bukan sekadar banyak fitur.",
+      "Mampu bekerja lintas layer dan cepat eksekusi dalam tim."
+    ],
+    "en": [
+      "Experienced with complex flows: auth, RBAC, transactions, webhooks, deployment.",
+      "Product-minded: focused on business impact, not feature count.",
+      "Able to work across layers and execute quickly in teams."
+    ]
+  },
+  "top_strengths": [
+    "End-to-end fullstack ownership",
+    "Structured debugging and incident handling",
+    "Business data and consistency mindset",
+    "AI integration (RAG + assistant)",
+    "Team leadership and technical alignment"
+  ],
+  "best_fit_roles": [
+    "Fullstack Developer",
+    "Product Engineer",
+    "Software Engineer (Web)",
+    "AI-Enabled Application Developer"
+  ],
+  "immediate_contribution_30_days": {
+    "id": [
+      "Audit flow kritikal dan perbaiki reliability issue prioritas.",
+      "Merapikan endpoint penting + validasi + observability dasar.",
+      "Kirim 1-2 fitur bisnis berdampak dengan dokumentasi rapi."
+    ],
+    "en": [
+      "Audit critical flows and fix top reliability issues.",
+      "Improve key endpoints with validation and baseline observability.",
+      "Ship 1-2 high-impact business features with clean documentation."
+    ]
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/wahid-nurhisyam-154027a7/",
+    "github": "https://github.com/icham11",
+    "project_live": "https://cuanify-chi.vercel.app"
+  }
+}

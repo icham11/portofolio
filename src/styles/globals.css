@@ -1,0 +1,500 @@
+/* src/styles/globals.css - Design system utama untuk portfolio Wahid Nurhisyam */
+/* Premium dark theme dengan violet/indigo/cyan gradient palette */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   ======================================== */
+
+/* ─── LIGHT MODE (default) ─── */
+:root {
+  /* Background terang */
+  --background: #f8f7ff;
+  --background-2: #f0eeff;
+  --background-3: #e8e4ff;
+  --background-card: rgba(255, 255, 255, 0.85);
+
+  /* Teks gelap untuk kontras yang baik */
+  --foreground: #1a1630;
+  --foreground-muted: #4a4070;
+  --foreground-subtle: #7c6fa0;
+
+  /* Warna brand — tetap sama di kedua mode */
+  --brand-violet: #7c3aed;
+  --brand-indigo: #4f46e5;
+  --brand-cyan: #0891b2;
+  --brand-violet-glow: rgba(124, 58, 237, 0.2);
+  --brand-cyan-glow: rgba(8, 145, 178, 0.15);
+
+  /* Border lebih subtle di light mode */
+  --border: rgba(124, 58, 237, 0.15);
+  --border-hover: rgba(124, 58, 237, 0.5);
+
+  /* Gradients */
+  --gradient-brand: linear-gradient(135deg, #7c3aed 0%, #4f46e5 50%, #06b6d4 100%);
+  --gradient-brand-text: linear-gradient(135deg, #6d28d9 0%, #4338ca 50%, #0891b2 100%);
+  --gradient-hero: radial-gradient(ellipse at top center, #ede9fe 0%, #f8f7ff 70%);
+  --gradient-card: linear-gradient(135deg, rgba(124, 58, 237, 0.06) 0%, rgba(6, 182, 212, 0.03) 100%);
+
+  /* Font family */
+  --font-heading: "Outfit", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Transisi */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+}
+
+/* ─── DARK MODE ─── */
+.dark {
+  /* Background gelap */
+  --background: #0a0a0f;
+  --background-2: #111118;
+  --background-3: #1a1a2e;
+  --background-card: rgba(17, 17, 24, 0.8);
+
+  /* Teks terang */
+  --foreground: #f8f8ff;
+  --foreground-muted: #94a3b8;
+  --foreground-subtle: #64748b;
+
+  /* Warna brand */
+  --brand-violet: #7c3aed;
+  --brand-indigo: #4f46e5;
+  --brand-cyan: #06b6d4;
+  --brand-violet-glow: rgba(124, 58, 237, 0.3);
+  --brand-cyan-glow: rgba(6, 182, 212, 0.2);
+
+  /* Border */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(124, 58, 237, 0.4);
+
+  /* Gradients */
+  --gradient-brand: linear-gradient(135deg, #7c3aed 0%, #4f46e5 50%, #06b6d4 100%);
+  --gradient-brand-text: linear-gradient(135deg, #a78bfa 0%, #818cf8 50%, #67e8f9 100%);
+  --gradient-hero: radial-gradient(ellipse at top center, #1a1a2e 0%, #0a0a0f 70%);
+  --gradient-card: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(6, 182, 212, 0.04) 100%);
+}
+
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Offset untuk sticky navbar */
+  overflow-x: hidden; /* Cegah horizontal scroll dari fixed/absolute elements yang lebar */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  /* Mencegah horizontal scroll */
+  overflow-x: hidden;
+  /* Antialiasing untuk font yang lebih crisp */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar - lebih elegan */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-violet);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-indigo);
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+h2 {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+}
+h3 {
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+/* ========================================
+   UTILITY CLASSES - Gradient Text
+   ======================================== */
+@layer utilities {
+  /* Gradient text untuk heading utama */
+  .gradient-text {
+    background: var(--gradient-brand-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Card dengan glassmorphism effect */
+  .glass-card {
+    background: var(--background-card);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    transition:
+      border-color var(--transition-normal),
+      box-shadow var(--transition-normal);
+  }
+
+  .glass-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 0 30px var(--brand-violet-glow);
+  }
+
+  /* Glow effect untuk elemen penting */
+  .glow-violet {
+    box-shadow:
+      0 0 20px var(--brand-violet-glow),
+      0 0 60px rgba(124, 58, 237, 0.1);
+  }
+
+  .glow-cyan {
+    box-shadow:
+      0 0 20px var(--brand-cyan-glow),
+      0 0 60px rgba(6, 182, 212, 0.08);
+  }
+
+  /* Gradient border */
+  .gradient-border {
+    position: relative;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-brand);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Noise texture overlay untuk kedalaman */
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+  }
+
+  /* Stripe gradient untuk badge/chip */
+  .badge-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(124, 58, 237, 0.2) 0%,
+      rgba(79, 70, 229, 0.2) 100%
+    );
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    color: #a78bfa;
+    border-radius: 9999px;
+    padding: 2px 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: var(--font-mono);
+  }
+
+  /* Status badge colors */
+  .status-live {
+    background: linear-gradient(
+      135deg,
+      rgba(34, 197, 94, 0.15) 0%,
+      rgba(16, 185, 129, 0.15) 100%
+    );
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #4ade80;
+  }
+
+  .status-progress {
+    background: linear-gradient(
+      135deg,
+      rgba(251, 191, 36, 0.15) 0%,
+      rgba(245, 158, 11, 0.15) 100%
+    );
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    color: #fbbf24;
+  }
+}
+
+/* ========================================
+   GRADIENT BACKGROUND ORBS
+   ======================================== */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-orb-violet {
+  background: radial-gradient(
+    circle,
+    rgba(124, 58, 237, 0.15) 0%,
+    transparent 70%
+  );
+}
+
+.bg-orb-cyan {
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+/* ========================================
+   ANIMASI CUSTOM
+   ======================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientFlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(124, 58, 237, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+  }
+}
+
+@keyframes typing-cursor {
+  0%,
+  100% {
+    border-right-color: var(--brand-violet);
+  }
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+/* ========================================
+   KOMPONEN BUTTON
+   ======================================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--gradient-brand);
+  background-size: 200% 200%;
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  white-space: nowrap;
+  animation: gradientFlow 4s ease infinite;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--brand-violet-glow);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 27px;
+  background: transparent;
+  color: var(--foreground);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-outline:hover {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: var(--brand-violet);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   SELECTION STYLE
+   ======================================== */
+::selection {
+  background: rgba(124, 58, 237, 0.3);
+  color: white;
+}
+
+/* ========================================
+   PREMIUM ANIMATION KEYFRAMES
+   ======================================== */
+
+/* Shimmer effect - used on card hovers */
+@keyframes shimmer {
+  0% { background-position: -400% 0; }
+  100% { background-position: 400% 0; }
+}
+
+/* Float up-down for ambient particles */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-12px) translateX(4px); }
+  66% { transform: translateY(6px) translateX(-4px); }
+}
+
+/* Slow rotating glow ring */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Gradient shimmer for active borders */
+@keyframes border-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Gentle breathe/scale pulse */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+/* Ripple ring outward */
+@keyframes ripple {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* === Utility classes for animations === */
+
+/* Floating particle */
+.particle-float {
+  animation: float var(--float-duration, 6s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+}
+
+/* Shimmer overlay - apply as a pseudoelement background */
+.shimmer-bg {
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(139, 92, 246, 0.12) 50%,
+    rgba(6, 182, 212, 0.08) 55%,
+    transparent 60%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 3.5s ease-in-out infinite;
+}
+
+/* Glowing border card */
+.glow-card {
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.glow-card:hover {
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.4),
+              0 8px 40px -12px rgba(139, 92, 246, 0.4),
+              0 16px 60px -20px rgba(6, 182, 212, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Ripple animation container (CTA section) */
+.ripple-ring {
+  animation: ripple 2.2s ease-out infinite;
+}
+

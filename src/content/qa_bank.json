@@ -1,0 +1,266 @@
+{
+  "owner": "Wahid Nurhisyam",
+  "version": "1.0.0",
+  "entries": [
+    {
+      "id": "qa_001",
+      "category": "intro",
+      "question": {
+        "id": "Ceritakan tentang diri kamu.",
+        "en": "Tell me about yourself."
+      },
+      "answer": {
+        "id": "Saya Wahid Nurhisyam, Captain dan Fullstack Developer. Saya fokus membangun produk end-to-end dari database, API, sampai UI production-ready. Kekuatan saya ada di problem solving, reliability sistem, dan menerjemahkan kebutuhan bisnis jadi fitur yang benar-benar terpakai.",
+        "en": "I am Wahid Nurhisyam, a Captain and Fullstack Developer. I focus on building end-to-end products from database and APIs to production-ready UI. My strengths are problem solving, system reliability, and turning business needs into practical features."
+      },
+      "tags": ["intro", "pitch", "profile"]
+    },
+    {
+      "id": "qa_002",
+      "category": "project",
+      "question": {
+        "id": "Project apa yang paling kamu banggakan?",
+        "en": "What project are you most proud of?"
+      },
+      "answer": {
+        "id": "Cuanify adalah project yang paling saya banggakan. Platform ini menggabungkan POS, inventory batch/FIFO, kasbon, analytics, dan AI assistant dalam satu alur. Nilai utamanya bukan hanya fitur banyak, tapi integrasi operasional yang lebih rapi untuk UMKM.",
+        "en": "Cuanify is the project I am most proud of. It combines POS, batch/FIFO inventory, debt tracking, analytics, and an AI assistant in one workflow. The core value is not just many features, but operational integration for SMEs."
+      },
+      "tags": ["project", "cuanify", "impact"]
+    },
+    {
+      "id": "qa_003",
+      "category": "architecture",
+      "question": {
+        "id": "Kenapa memilih Next.js, Prisma, dan PostgreSQL?",
+        "en": "Why did you choose Next.js, Prisma, and PostgreSQL?"
+      },
+      "answer": {
+        "id": "Next.js memudahkan fullstack development dalam satu codebase dan cepat untuk deploy. Prisma membuat query lebih aman dan maintainable lewat schema typed. PostgreSQL saya pilih karena kuat untuk transaksi relasional dan bisa diperluas dengan pgvector untuk RAG.",
+        "en": "Next.js enables fullstack development in a single codebase with fast deployment. Prisma gives safer and more maintainable typed data access. PostgreSQL is strong for relational transactions and extendable with pgvector for RAG."
+      },
+      "tags": ["architecture", "nextjs", "prisma", "postgresql"]
+    },
+    {
+      "id": "qa_004",
+      "category": "leadership",
+      "question": {
+        "id": "Sebagai captain, kontribusi utamamu apa?",
+        "en": "As a captain, what were your main contributions?"
+      },
+      "answer": {
+        "id": "Saya memimpin arah teknis dan memastikan eksekusi tim tetap fokus pada prioritas produk. Di sisi implementasi, saya mengerjakan flow krusial seperti auth, API inti, integrasi AI, payment flow, dan stabilisasi saat deploy. Saya juga jadi penghubung antara kebutuhan tim dan keputusan teknis.",
+        "en": "I led technical direction and kept team execution focused on product priorities. On implementation, I handled critical flows such as auth, core APIs, AI integration, payment flow, and deployment stabilization. I also bridged team needs with technical decisions."
+      },
+      "tags": ["leadership", "captain", "teamwork"]
+    },
+    {
+      "id": "qa_005",
+      "category": "challenge",
+      "question": {
+        "id": "Tantangan teknis paling sulit apa yang kamu hadapi?",
+        "en": "What was the hardest technical challenge you faced?"
+      },
+      "answer": {
+        "id": "Tantangan terbesar ada di konsistensi data transaksi, stok, dan status pembayaran saat kondisi real-world tidak ideal. Saya pecah masalahnya jadi alur idempotent, validasi berlapis, dan fallback yang jelas. Hasilnya, alur lebih predictable dan error lebih cepat dilokalisasi.",
+        "en": "The hardest challenge was maintaining consistency across transactions, stock, and payment status under real-world failures. I broke it down into idempotent flow, layered validation, and clear fallbacks. This made the flow more predictable and easier to debug."
+      },
+      "tags": ["challenge", "consistency", "reliability"]
+    },
+    {
+      "id": "qa_006",
+      "category": "incident",
+      "question": {
+        "id": "Pernah ada masalah saat deploy? Bagaimana kamu menanganinya?",
+        "en": "Did you face deployment issues? How did you handle them?"
+      },
+      "answer": {
+        "id": "Pernah, termasuk build error dan environment mismatch antara local dan production. Saya tracing dari log, verifikasi env variable yang dipakai runtime, lalu perbaiki fallback/error message agar diagnosa lebih cepat. Setelah itu saya validasi ulang endpoint kritikal sebelum redeploy.",
+        "en": "Yes, including build errors and environment mismatches between local and production. I traced logs, verified runtime environment variables, and improved fallback/error messages for faster diagnosis. Then I revalidated critical endpoints before redeploying."
+      },
+      "tags": ["deployment", "debugging", "vercel"]
+    },
+    {
+      "id": "qa_007",
+      "category": "payments",
+      "question": {
+        "id": "Bagaimana kamu menangani masalah integrasi payment gateway?",
+        "en": "How did you handle payment gateway integration issues?"
+      },
+      "answer": {
+        "id": "Saya fokus pada validasi konfigurasi environment, pemetaan status transaksi, dan webhook idempotency agar update tidak ganda. Saat muncul error 401, saya audit mode sandbox/production dan key pairing sampai match. Pendekatan saya selalu: amankan status transaksi dulu, baru optimasi flow.",
+        "en": "I focused on environment validation, transaction status mapping, and webhook idempotency to avoid duplicate updates. When 401 errors happened, I audited sandbox/production mode and key pairing until they matched. My approach is always: secure transaction state first, then optimize flow."
+      },
+      "tags": ["midtrans", "payment", "webhook"]
+    },
+    {
+      "id": "qa_008",
+      "category": "inventory",
+      "question": {
+        "id": "Bagaimana memastikan stok tetap konsisten?",
+        "en": "How do you ensure inventory consistency?"
+      },
+      "answer": {
+        "id": "Saya pakai konsep batch inventory dengan deduction terkontrol di titik transaksi yang valid. Untuk flow kritikal, saya gunakan transaksi database dan guard logic agar stok tidak terpotong dua kali. Prinsipnya: satu sumber kebenaran, satu jalur update yang jelas.",
+        "en": "I use a batch-inventory model with controlled deduction at valid transaction points. For critical flows, I use DB transactions and guards to prevent double deductions. The principle is one source of truth and one clear update path."
+      },
+      "tags": ["inventory", "fifo", "database"]
+    },
+    {
+      "id": "qa_009",
+      "category": "ai",
+      "question": {
+        "id": "Bagaimana flow RAG yang kamu implementasikan?",
+        "en": "How does the RAG flow you built work?"
+      },
+      "answer": {
+        "id": "Data bisnis diubah jadi dokumen terstruktur, dipecah jadi chunk, lalu dibuat embedding dan disimpan di PostgreSQL pgvector. Saat user bertanya, query di-embed, dicari chunk paling relevan, lalu konteks itu dipakai model chat untuk menjawab. Dengan begitu jawaban AI lebih grounded ke data bisnis nyata.",
+        "en": "Business data is transformed into structured documents, chunked, embedded, and stored in PostgreSQL pgvector. On each question, the query is embedded, top relevant chunks are retrieved, and that context is fed to the chat model. This keeps AI responses grounded in real business data."
+      },
+      "tags": ["rag", "pgvector", "ai"]
+    },
+    {
+      "id": "qa_010",
+      "category": "ai",
+      "question": {
+        "id": "Model AI apa yang kamu gunakan dan kenapa?",
+        "en": "Which AI models did you use and why?"
+      },
+      "answer": {
+        "id": "Untuk chat reasoning saya gunakan Groq karena respons cepat untuk use case assistant. Untuk embedding RAG saya pakai Gemini embedding agar retrieval lebih relevan. Kombinasi ini menyeimbangkan kecepatan, kualitas konteks, dan biaya operasional.",
+        "en": "For chat reasoning, I used Groq for fast assistant responses. For RAG retrieval, I used Gemini embeddings for relevance. This combination balances speed, context quality, and operational cost."
+      },
+      "tags": ["groq", "gemini", "model-selection"]
+    },
+    {
+      "id": "qa_011",
+      "category": "security",
+      "question": {
+        "id": "Apa pendekatanmu terhadap security di project?",
+        "en": "What is your security approach in projects?"
+      },
+      "answer": {
+        "id": "Saya mulai dari autentikasi, otorisasi berbasis role, dan pembatasan akses endpoint. Untuk integrasi payment, saya prioritaskan signature verification dan idempotency pada webhook. Selain itu, saya biasakan audit env config dan meminimalkan exposure endpoint yang tidak perlu.",
+        "en": "I start with authentication, role-based authorization, and strict endpoint access. For payment integration, I prioritize webhook signature verification and idempotency. I also audit environment configuration and minimize unnecessary endpoint exposure."
+      },
+      "tags": ["security", "rbac", "webhook"]
+    },
+    {
+      "id": "qa_012",
+      "category": "testing",
+      "question": {
+        "id": "Bagaimana strategi testing kamu?",
+        "en": "What is your testing strategy?"
+      },
+      "answer": {
+        "id": "Saya lakukan testing bertahap: validasi endpoint inti, skenario transaksi normal, dan skenario gagal seperti env mismatch atau API third-party error. Untuk area paling kritikal, saya pakai checklist regression sebelum release. Fokus saya adalah mencegah bug berdampak bisnis.",
+        "en": "I use layered testing: core endpoint validation, normal transaction scenarios, and failure scenarios like env mismatch or third-party API errors. For critical areas, I run a regression checklist before release. My focus is preventing business-impacting bugs."
+      },
+      "tags": ["testing", "qa", "regression"]
+    },
+    {
+      "id": "qa_013",
+      "category": "performance",
+      "question": {
+        "id": "Apa yang kamu lakukan untuk performa aplikasi?",
+        "en": "What did you do for application performance?"
+      },
+      "answer": {
+        "id": "Saya optimalkan query yang sering dipakai, mengurangi fetch tidak perlu, dan mengatur cache/fallback seperlunya di sisi client-server. Untuk AI, saya pastikan prompt dan retrieval tetap efisien agar latency tidak berlebihan. Saya juga menjaga payload API tetap ringkas.",
+        "en": "I optimize frequently used queries, reduce unnecessary fetches, and apply cache/fallback where appropriate. For AI features, I keep prompts and retrieval efficient to control latency. I also keep API payloads compact."
+      },
+      "tags": ["performance", "optimization", "api"]
+    },
+    {
+      "id": "qa_014",
+      "category": "debugging",
+      "question": {
+        "id": "Saat menemukan bug yang belum pernah ditemui, apa langkahmu?",
+        "en": "What do you do when facing an unfamiliar bug?"
+      },
+      "answer": {
+        "id": "Saya mulai dari reproduksi bug yang konsisten, lalu narrowing scope berdasarkan log dan jalur data. Setelah akar masalah ketemu, saya perbaiki penyebab utama, bukan gejala. Terakhir, saya tambahkan guard agar bug serupa tidak terulang.",
+        "en": "I start by reproducing the bug consistently, then narrow scope using logs and data flow. Once root cause is identified, I fix the cause rather than the symptom. Finally, I add safeguards to prevent recurrence."
+      },
+      "tags": ["debugging", "problem-solving", "process"]
+    },
+    {
+      "id": "qa_015",
+      "category": "teamwork",
+      "question": {
+        "id": "Bagaimana cara kamu menyelesaikan perbedaan pendapat teknis di tim?",
+        "en": "How do you resolve technical disagreements in a team?"
+      },
+      "answer": {
+        "id": "Saya ajak diskusi berbasis tujuan produk dan trade-off teknis, bukan opini pribadi. Kami bandingkan opsi dari sisi impact, effort, dan risk. Jika perlu, saya dorong quick spike/prototype kecil untuk mengambil keputusan berdasarkan bukti.",
+        "en": "I resolve disagreements by aligning on product goals and technical trade-offs, not personal opinions. We compare options by impact, effort, and risk. If needed, I suggest a quick spike/prototype to decide based on evidence."
+      },
+      "tags": ["teamwork", "communication", "leadership"]
+    },
+    {
+      "id": "qa_016",
+      "category": "prioritization",
+      "question": {
+        "id": "Bagaimana kamu menentukan prioritas fitur?",
+        "en": "How do you prioritize features?"
+      },
+      "answer": {
+        "id": "Saya prioritaskan fitur yang langsung berdampak ke user flow utama dan risiko bisnis. Biasanya urutan saya: reliability flow inti dulu, lalu usability, lalu fitur tambahan. Dengan begitu produk tetap usable meski belum 100% lengkap.",
+        "en": "I prioritize features that directly impact core user flows and business risk. My usual order is: core reliability first, usability second, then additional features. This keeps the product usable even before full completion."
+      },
+      "tags": ["prioritization", "product", "execution"]
+    },
+    {
+      "id": "qa_017",
+      "category": "improvement",
+      "question": {
+        "id": "Kalau diberi waktu lebih, apa yang akan kamu tingkatkan?",
+        "en": "If given more time, what would you improve?"
+      },
+      "answer": {
+        "id": "Saya akan memperkuat automated testing, observability yang lebih detail, dan hardening security endpoint. Di sisi produk, saya akan memperdalam simulasi bisnis berbasis AI dan menambah insight yang lebih preskriptif.",
+        "en": "I would strengthen automated testing, deeper observability, and endpoint security hardening. On the product side, I would improve AI-driven business simulation and more prescriptive insights."
+      },
+      "tags": ["roadmap", "improvement", "scalability"]
+    },
+    {
+      "id": "qa_018",
+      "category": "hiring",
+      "question": {
+        "id": "Kenapa kami harus hire kamu?",
+        "en": "Why should we hire you?"
+      },
+      "answer": {
+        "id": "Saya tidak hanya bisa membangun fitur, tapi juga menjaga fitur itu tetap reliable di production. Saya terbiasa bekerja lintas layer: product thinking, backend logic, dan frontend experience. Saya cepat belajar, ownership kuat, dan nyaman di situasi pressure.",
+        "en": "I do not only build features, I make sure they stay reliable in production. I am comfortable across layers: product thinking, backend logic, and frontend experience. I learn fast, take strong ownership, and perform well under pressure."
+      },
+      "tags": ["hiring", "strengths", "value"]
+    },
+    {
+      "id": "qa_019",
+      "category": "self-awareness",
+      "question": {
+        "id": "Apa kelemahanmu dan bagaimana kamu mengatasinya?",
+        "en": "What is your weakness and how do you handle it?"
+      },
+      "answer": {
+        "id": "Saya kadang terlalu detail di area teknis yang saya pedulikan. Untuk menyeimbangkan, saya pakai timebox, definisi done yang jelas, dan komunikasi prioritas lebih awal ke tim.",
+        "en": "I can be overly detailed in technical areas I care about. To balance this, I use timeboxing, clear definitions of done, and early priority communication with the team."
+      },
+      "tags": ["growth", "self-awareness", "discipline"]
+    },
+    {
+      "id": "qa_020",
+      "category": "career",
+      "question": {
+        "id": "Apa tujuan kariermu dalam 2-3 tahun ke depan?",
+        "en": "What are your career goals for the next 2-3 years?"
+      },
+      "answer": {
+        "id": "Dalam 2-3 tahun, saya ingin berkembang sebagai product-minded fullstack engineer yang kuat di system design dan AI-enabled applications. Saya ingin terlibat di produk dengan dampak bisnis jelas, sambil terus meningkatkan kualitas engineering dan leadership.",
+        "en": "In the next 2-3 years, I want to grow as a product-minded fullstack engineer with strong system design and AI-enabled application skills. I aim to work on products with clear business impact while improving engineering quality and leadership."
+      },
+      "tags": ["career", "future", "goals"]
+    }
+  ]
+}

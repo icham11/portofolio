@@ -1,0 +1,451 @@
+{
+  "projects": [
+    {
+      "slug": "cuanify",
+      "title": "Cuanify",
+      "status": "live",
+      "type": {
+        "en": "Final Project - Hacktiv8 FSJS",
+        "id": "Final Project - Hacktiv8 FSJS"
+      },
+      "period": "2026",
+      "role": {
+        "en": "Captain & Fullstack Developer",
+        "id": "Captain & Fullstack Developer"
+      },
+      "team": [
+        "Wahid Nurhisyam",
+        "Dimas Budi Nugraha",
+        "Halim Ornest"
+      ],
+      "summary": {
+        "id": "Platform operasional UMKM: POS, inventory, kasbon, analytics, dan AI Assistant dalam satu sistem.",
+        "en": "SME operations platform: POS, inventory, debt tracking, analytics, and AI Assistant in one system."
+      },
+      "problem": {
+        "id": "UMKM sering memakai banyak tools terpisah untuk kasir, stok, dan insight bisnis sehingga operasional lambat dan rawan selisih data.",
+        "en": "SMEs often use separate tools for cashier operations, stock tracking, and business insights, causing slow operations and data inconsistencies."
+      },
+      "solution": {
+        "id": "Membangun sistem terintegrasi dengan alur transaksi, inventori batch/FIFO, pembayaran online, dan AI center berbasis data bisnis.",
+        "en": "Built an integrated system with transaction flow, batch/FIFO inventory, online payments, and an AI center grounded in business data."
+      },
+      "impact": {
+        "en": [
+          "Operasional lebih terpusat dalam satu platform",
+          "Pemantauan stok dan transaksi lebih konsisten",
+          "Insight bisnis lebih cepat melalui AI Assistant"
+        ],
+        "id": [
+          "Operasional lebih terpusat dalam satu platform",
+          "Pemantauan stok dan transaksi lebih konsisten",
+          "Insight bisnis lebih cepat melalui AI Assistant"
+        ]
+      },
+      "features": {
+        "en": [
+          "Auth JWT + Google Sign In",
+          "Role-based access (Owner/Cashier)",
+          "POS Checkout (Cash, Kasbon, QRIS/Transfer/Digital)",
+          "Midtrans payment integration + webhook",
+          "Inventory batch + FIFO + low-stock alert",
+          "Debt/Kasbon management",
+          "AI chat and smart insights",
+          "Generate product/recipe from image",
+          "PWA support"
+        ],
+        "id": [
+          "Auth JWT + Google Sign In",
+          "Role-based access (Owner/Cashier)",
+          "POS Checkout (Cash, Kasbon, QRIS/Transfer/Digital)",
+          "Midtrans payment integration + webhook",
+          "Inventory batch + FIFO + low-stock alert",
+          "Debt/Kasbon management",
+          "AI chat and smart insights",
+          "Generate product/recipe from image",
+          "PWA support"
+        ]
+      },
+      "tech": {
+        "frontend": [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS"
+        ],
+        "backend": [
+          "Next.js API Routes",
+          "Node.js"
+        ],
+        "database": [
+          "PostgreSQL",
+          "Prisma",
+          "pgvector"
+        ],
+        "ai": [
+          "Groq API",
+          "Gemini Embeddings",
+          "RAG"
+        ],
+        "integrations": [
+          "Midtrans",
+          "ImageKit",
+          "NextAuth",
+          "Xendit"
+        ],
+        "deployment": [
+          "Vercel"
+        ]
+      },
+      "challenges": {
+        "en": [
+          "Konsistensi data inventory pada alur transaksi",
+          "Stabilitas integrasi payment gateway (env + webhook)",
+          "Fallback AI saat provider/connection issue"
+        ],
+        "id": [
+          "Konsistensi data inventory pada alur transaksi",
+          "Stabilitas integrasi payment gateway (env + webhook)",
+          "Fallback AI saat provider/connection issue"
+        ]
+      },
+      "links": {
+        "live": "https://cuanify-chi.vercel.app",
+        "repo": "https://github.com/icham11/cuanify",
+        "case_study": "https://www.linkedin.com/in/wahid-nurhisyam-154027a7/"
+      }
+    },
+    {
+      "slug": "githired-ai-career-assistant",
+      "title": "GitHired — AI-Powered Interview & Resume Assistant",
+      "status": "live",
+      "type": {
+        "en": "Fullstack Web App",
+        "id": "Fullstack Web App"
+      },
+      "period": "January 2026 – Present",
+      "role": {
+        "en": "Fullstack Developer (Solo)",
+        "id": "Fullstack Developer (Solo)"
+      },
+      "team": [
+        "Wahid Nurhisyam"
+      ],
+      "summary": {
+        "id": "Platform persiapan karier berbasis AI untuk latihan interview teknis dan analisis CV ATS dalam satu aplikasi.",
+        "en": "An AI-powered career preparation platform that combines technical mock interviews and ATS-focused resume analysis in one app."
+      },
+      "problem": {
+        "id": "Pencari kerja sering kesulitan latihan interview yang realistis, mendapatkan feedback CV yang actionable, dan memantau progres secara terstruktur.",
+        "en": "Job seekers often struggle to get realistic interview practice, actionable resume feedback, and structured progress tracking."
+      },
+      "solution": {
+        "id": "Membangun aplikasi fullstack dengan mock interview adaptif, analisis resume PDF berbasis AI, dukungan voice (STT/TTS), gamification, serta monetisasi Pro melalui Midtrans.",
+        "en": "Built a fullstack app with adaptive AI mock interviews, PDF resume analysis, voice support (STT/TTS), gamification, and Pro monetization via Midtrans."
+      },
+      "impact": {
+        "en": [
+          "Implemented monetization flow with Midtrans and automatic Pro upgrade activation (IDR 50,000).",
+          "Enforced free-tier limits (max 1 interview session) while unlocking unlimited sessions for Pro users.",
+          "Delivered bilingual feedback output (English and Indonesian) for both interview evaluation and resume analysis.",
+          "Enabled voice-based interview flow using speech-to-text and text-to-speech endpoints."
+        ],
+        "id": [
+          "Implemented monetization flow with Midtrans and automatic Pro upgrade activation (IDR 50,000).",
+          "Enforced free-tier limits (max 1 interview session) while unlocking unlimited sessions for Pro users.",
+          "Delivered bilingual feedback output (English and Indonesian) for both interview evaluation and resume analysis.",
+          "Enabled voice-based interview flow using speech-to-text and text-to-speech endpoints."
+        ]
+      },
+      "features": {
+        "en": [
+          "JWT auth and Google OAuth login",
+          "AI mock interview with role, difficulty, and language settings",
+          "Post-interview scoring and detailed feedback",
+          "ATS resume scanner with PDF upload and bilingual analysis",
+          "User profile analytics, history logs, and gamification tiers",
+          "Midtrans payment integration for Pro subscription"
+        ],
+        "id": [
+          "JWT auth and Google OAuth login",
+          "AI mock interview with role, difficulty, and language settings",
+          "Post-interview scoring and detailed feedback",
+          "ATS resume scanner with PDF upload and bilingual analysis",
+          "User profile analytics, history logs, and gamification tiers",
+          "Midtrans payment integration for Pro subscription"
+        ]
+      },
+      "tech": {
+        "frontend": [
+          "React 19",
+          "Vite",
+          "Redux Toolkit",
+          "React Router",
+          "Tailwind CSS",
+          "Framer Motion",
+          "Axios"
+        ],
+        "backend": [
+          "Node.js",
+          "Express 5",
+          "Sequelize",
+          "JWT",
+          "Passport Google OAuth",
+          "Multer"
+        ],
+        "database": [
+          "PostgreSQL",
+          "SQLite (test)"
+        ],
+        "ai": [
+          "Groq Llama 4 Scout",
+          "Groq Whisper Large v3 Turbo",
+          "Groq Orpheus"
+        ],
+        "integrations": [
+          "Midtrans Snap",
+          "Google OAuth",
+          "ImageKit",
+          "Firebase Hosting"
+        ],
+        "deployment": [
+          "Firebase Hosting (frontend)",
+          "Node.js server deployment"
+        ]
+      },
+      "challenges": {
+        "en": [
+          "Keeping LLM responses in strict JSON format with robust fallback parsing.",
+          "Handling AI rate limits and providing graceful fallback behavior for TTS.",
+          "Managing secure access control between free and Pro feature gates.",
+          "Maintaining consistency for multilingual feedback storage and rendering."
+        ],
+        "id": [
+          "Keeping LLM responses in strict JSON format with robust fallback parsing.",
+          "Handling AI rate limits and providing graceful fallback behavior for TTS.",
+          "Managing secure access control between free and Pro feature gates.",
+          "Maintaining consistency for multilingual feedback storage and rendering."
+        ]
+      },
+      "links": {
+        "live": "https://githired.web.app",
+        "repo": "https://github.com/icham11/githired-dev",
+        "case_study": ""
+      }
+    },
+    {
+      "slug": "ai-portfolio",
+      "title": "Wahid AI Portfolio",
+      "status": "in_progress",
+      "type": {
+        "en": "Personal Branding Website",
+        "id": "Personal Branding Website"
+      },
+      "period": "2026",
+      "role": {
+        "en": "Fullstack Developer",
+        "id": "Fullstack Developer"
+      },
+      "team": [
+        "Wahid Nurhisyam"
+      ],
+      "summary": {
+        "id": "Website portofolio interaktif dengan AI Interview Mode dan Recruiter Mode.",
+        "en": "Interactive portfolio website with AI Interview Mode and Recruiter Mode."
+      },
+      "problem": {
+        "id": "Portofolio biasa kurang menunjukkan cara berpikir engineering secara nyata.",
+        "en": "Typical portfolios do not clearly demonstrate real engineering thinking."
+      },
+      "solution": {
+        "id": "Membuat portofolio yang bisa diajak chat (RAG), menampilkan case study, dan simulator problem solving.",
+        "en": "Creating a portfolio with RAG chat, case studies, and a problem-solving simulator."
+      },
+      "impact": {
+        "en": [
+          "Meningkatkan personal branding teknis",
+          "Memudahkan recruiter menilai skill secara cepat"
+        ],
+        "id": [
+          "Meningkatkan personal branding teknis",
+          "Memudahkan recruiter menilai skill secara cepat"
+        ]
+      },
+      "features": {
+        "en": [
+          "AI Interview Mode with RAG",
+          "Recruiter Mode summary generator",
+          "Incident Simulator - interactive debugging scenarios",
+          "Case study project cards",
+          "SEO + OpenGraph metadata"
+        ],
+        "id": [
+          "AI Interview Mode with RAG",
+          "Recruiter Mode summary generator",
+          "Incident Simulator - interactive debugging scenarios",
+          "Case study project cards",
+          "SEO + OpenGraph metadata"
+        ]
+      },
+      "tech": {
+        "frontend": [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "backend": [
+          "Next.js API Routes"
+        ],
+        "database": [
+          "PostgreSQL",
+          "Prisma",
+          "pgvector"
+        ],
+        "ai": [
+          "Groq API",
+          "Gemini Embeddings",
+          "RAG"
+        ],
+        "deployment": [
+          "Vercel"
+        ]
+      },
+      "challenges": {
+        "en": [
+          "Streaming AI response dengan UX yang smooth",
+          "RAG retrieval yang cepat dan relevan",
+          "Design yang premium tanpa terasa generik"
+        ],
+        "id": [
+          "Streaming AI response dengan UX yang smooth",
+          "RAG retrieval yang cepat dan relevan",
+          "Design yang premium tanpa terasa generik"
+        ]
+      },
+      "links": {
+        "live": "https://your-portfolio-domain.vercel.app",
+        "repo": "https://github.com/icham11/ai-portfolio"
+      }
+    },
+    {
+      "slug": "dior-dungeon",
+      "title": "Dior Dungeon",
+      "status": "live",
+      "type": {
+        "en": "AI-Powered Real-Time Multiplayer Web RPG",
+        "id": "AI-Powered Real-Time Multiplayer Web RPG"
+      },
+      "period": "January 2026",
+      "role": {
+        "en": "Developer (Fullstack, Gameplay Flow, Realtime Integration)",
+        "id": "Developer (Fullstack, Gameplay Flow, Realtime Integration)"
+      },
+      "team": [
+        "Dimas (Project Lead)",
+        "Ornest (Developer)",
+        "Wahid (Developer)"
+      ],
+      "summary": {
+        "id": "Dior Dungeon adalah game RPG multiplayer berbasis web (hingga 3 pemain) dengan dungeon, karakter, event NPC, dan narasi yang dihasilkan AI secara dinamis.",
+        "en": "Dior Dungeon is a browser-based multiplayer RPG (up to 3 players) with AI-generated dungeons, characters, NPC events, and dynamic narration."
+      },
+      "problem": {
+        "id": "Game RPG tradisional sering statis, butuh instalasi, dan sulit dimainkan bareng secara cepat. Cerita juga repetitif sehingga replay value rendah.",
+        "en": "Traditional RPGs are often static, require installation, and are harder to play instantly with friends. Storylines also become repetitive, lowering replay value."
+      },
+      "solution": {
+        "id": "Membangun game web realtime dengan Socket.IO, backend server-authoritative, dan integrasi Gemini/Groq untuk procedural generation dungeon, karakter, event NPC, serta narasi battle.",
+        "en": "Built a real-time web game using Socket.IO, a server-authoritative backend, and Gemini/Groq integration for procedural dungeon, character, NPC event, and battle narration generation."
+      },
+      "impact": {
+        "en": [
+          "Enabled instant party play (up to 3 players) directly from browser",
+          "Improved replayability with AI-generated dungeon and narrative variation",
+          "Reduced client-side cheating risk by keeping core game logic on server",
+          "Supported bilingual gameplay experience (Indonesian/English)"
+        ],
+        "id": [
+          "Enabled instant party play (up to 3 players) directly from browser",
+          "Improved replayability with AI-generated dungeon and narrative variation",
+          "Reduced client-side cheating risk by keeping core game logic on server",
+          "Supported bilingual gameplay experience (Indonesian/English)"
+        ]
+      },
+      "features": {
+        "en": [
+          "Room creation and join with unique room codes",
+          "Realtime waiting room with ready-check and host controls",
+          "AI character generation and regeneration per player",
+          "Turn-based battle with stamina system and round resolution",
+          "Action timeout with automatic rest fallback",
+          "NPC choice events with party-wide effects",
+          "Story summary, battle summary, and final game summary generation",
+          "Reconnect flow for players who disconnect mid-session"
+        ],
+        "id": [
+          "Room creation and join with unique room codes",
+          "Realtime waiting room with ready-check and host controls",
+          "AI character generation and regeneration per player",
+          "Turn-based battle with stamina system and round resolution",
+          "Action timeout with automatic rest fallback",
+          "NPC choice events with party-wide effects",
+          "Story summary, battle summary, and final game summary generation",
+          "Reconnect flow for players who disconnect mid-session"
+        ]
+      },
+      "tech": {
+        "frontend": [
+          "React",
+          "Vite",
+          "Bootstrap",
+          "React Router",
+          "Socket.IO Client"
+        ],
+        "backend": [
+          "Node.js",
+          "Express",
+          "Socket.IO"
+        ],
+        "database": [
+          "PostgreSQL",
+          "Sequelize ORM",
+          "JSONB (game state storage)"
+        ],
+        "ai": [
+          "Google Gemini API",
+          "Groq SDK (fallback/provider)"
+        ],
+        "integrations": [
+          "UUID",
+          "SweetAlert2"
+        ],
+        "deployment": [
+          "Firebase Hosting (frontend)",
+          "Railway (backend)",
+          "Railway PostgreSQL (database)"
+        ]
+      },
+      "challenges": {
+        "en": [
+          "Sequelize JSONB change tracking required explicit changed() handling",
+          "Race conditions in concurrent player action submission",
+          "State consistency during reconnect and mid-game sync",
+          "ID type mismatch handling (string vs number) across layers",
+          "Action timer lifecycle and cleanup on disconnect"
+        ],
+        "id": [
+          "Sequelize JSONB change tracking required explicit changed() handling",
+          "Race conditions in concurrent player action submission",
+          "State consistency during reconnect and mid-game sync",
+          "ID type mismatch handling (string vs number) across layers",
+          "Action timer lifecycle and cleanup on disconnect"
+        ]
+      },
+      "links": {
+        "live": "https://gen-lang-client-0652984293.web.app/",
+        "repo": "https://github.com/RMT-68/dior-dungeon",
+        "case_study": "https://github.com/RMT-68/dior-dungeon/blob/pre-deploy/PRESENTATION.md"
+      }
+    }
+  ]
+}

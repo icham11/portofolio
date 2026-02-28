@@ -1,0 +1,58 @@
+{
+  "bootcamp": {
+    "program": "Hacktiv8 Full Stack JavaScript (FSJS)",
+    "type": "Graduation Final Project",
+    "project": "Cuanify"
+  },
+  "certifications": [
+    {
+      "name": "Fullstack JavaScript Immersive",
+      "authority": "Hacktiv8",
+      "issued_at": "2026-02-27",
+      "credential_url": "https://students.hacktiv8.com/certificates/a7fa92cb-06ff-446f-a2af-377eec0e19f3",
+      "description": "Successfully completed Fullstack JavaScript Immersive at Hacktiv8, building scalable web apps using JavaScript, React, Node.js, Express, and MongoDB, with strong REST API and Git fundamentals."
+    },
+    {
+      "name": "1st Place – Dragon’s Challenge Vol.2",
+      "authority": "Byte Unite",
+      "issued_at": "2025-12-20",
+      "credential_url": "https://byteunite.dev/verify-certificate?code=DC2-001",
+      "description": "Won 1st Place at Dragon’s Challenge Vol.2 Live Coding Contest by Byte Unite, showcasing strong problem-solving, logic, and competitive programming skills under pressure."
+    },
+    {
+      "name": "JavaScript (Basic) Certificate",
+      "authority": "HackerRank",
+      "issued_at": "2026-02-19",
+      "credential_url": "https://www.hackerrank.com/certificates/b4da96300ff9",
+      "description": "Validates JavaScript fundamentals: functions, scope, hoisting, events, inheritance, and error handling."
+    },
+    {
+      "name": "Software Engineer Intern",
+      "authority": "HackerRank",
+      "issued_at": "2026-02-19",
+      "credential_url": "https://www.hackerrank.com/certificates/your-software-engineer-intern-id",
+      "description": "Validates coding, debugging, problem solving, and software engineering workflow readiness."
+    },
+    {
+      "name": "Problem Solving (Basic)",
+      "authority": "HackerRank",
+      "issued_at": "2026-02-19",
+      "credential_url": "https://www.hackerrank.com/certificates/your-problem-solving-id",
+      "description": "Validates algorithmic thinking and ability to produce correct and efficient basic solutions."
+    },
+    {
+      "name": "React (Basic)",
+      "authority": "HackerRank",
+      "issued_at": "2026-02-19",
+      "credential_url": "https://www.hackerrank.com/certificates/your-react-id",
+      "description": "Validates React basics: components, props, state, hooks, and event handling."
+    },
+    {
+      "name": "CSS (Basic)",
+      "authority": "HackerRank",
+      "issued_at": "2026-02-19",
+      "credential_url": "https://www.hackerrank.com/certificates/your-css-id",
+      "description": "Validates CSS fundamentals: selectors, box model, positioning, flexbox, and responsive layout."
+    }
+  ]
+}
